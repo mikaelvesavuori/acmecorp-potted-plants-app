@@ -1,7 +1,7 @@
 {
   "name": "acmecorp-potted-plants-app",
   "version": "1.0.0",
-  "description": "An example application meant to use a React component library generated partially with Figmagic. Made for the newline Figmagic course.",
+  "description": "An example application meant to use a React component library generated and/or composed with Figmagic. Made for The newline Guide to React Component Design Systems with Figmagic.",
   "keywords": [
     "acmecorp",
     "example-app",
