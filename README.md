@@ -2,21 +2,6 @@
 
 An example application meant to use a React component library generated partially with Figmagic. Made for [The newline Guide to React Component Design Systems with Figmagic](https://www.newline.co/courses/newline-guide-to-react-component-design-systems-with-figmagic/).
 
-This project uses a fairly basic React setup, with a bit of "classic state management" (i.e. "prop passing") and `.jsx` files.
-
-The idea is that you will actually have to do very, very minimal work on these files.
-
-There are two views: ProductsView and CheckoutView. There is a "complete" or final set of these, and an initial set of both. You would use the final set to see what the intended result is, and the initial ones as you begin working on your own components. You can do this by editing the following section in `src/app.jsx`:
-
-```jsx
-import { ProductsView } from './views/final/ProductsView'; // Use './views/ProductsView' for the "initial" raw version to begin working with
-import { CheckoutView } from './views/final/CheckoutView'; // Use './views/CheckoutView' for the "initial" raw version to begin working with
-```
-
-## Component library usage
-
-This is rigged to use my package, `@mikaelvesavuori/acmecorp-potted-plants-components`, but you should absolutely install and re-point to your own library.
-
 ## Technology
 
 - React 17
@@ -25,10 +10,12 @@ This is rigged to use my package, `@mikaelvesavuori/acmecorp-potted-plants-compo
 - Prettier
 - Babel
 
+
 ## Instructions
 
 - Install with `npm install`
 - Run dev server with `npm start`
+
 
 ## Structure
 
@@ -40,3 +27,20 @@ This is rigged to use my package, `@mikaelvesavuori/acmecorp-potted-plants-compo
 - `/src/data.json`: Product data
 - `/src/views`: Views with initial state
 - `/src/views/final`: Views with "final" code to use complete components from our component library
+
+## Views
+
+This project uses a fairly basic React setup, with a bit of "classic state management" (i.e. "prop passing") and `.jsx` files.
+
+_The idea is that you will actually have to do very, very minimal work on these files!_
+
+There are two primary views, **ProductsView** (`/products`) and **CheckoutView** (`/checkout`), and a `DemoView` (`/demo`; also any fallback route). For the primary views, there is a "complete"/final set of these, and an initial/starter set. You would use the final set to see what the intended result is, and the initial ones as you begin working on your own components. You can switch between them by editing the following section in `src/app.jsx`:
+
+```jsx
+import { ProductsView } from './views/final/ProductsView'; // Use './views/ProductsView' for the "initial" raw version to begin working with
+import { CheckoutView } from './views/final/CheckoutView'; // Use './views/CheckoutView' for the "initial" raw version to begin working with
+```
+
+## Component library usage
+
+The app is hooked up to use my package, [`@mikaelvesavuori/acmecorp-potted-plants-components`](https://www.npmjs.com/package/@mikaelvesavuori/acmecorp-potted-plants-components), but you should absolutely do `npm install {YOUR_PACKAGE}` and re-point to your own in the views.
