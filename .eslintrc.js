@@ -1,4 +1,7 @@
 {
+  "env": {
+    "node": true
+  },
   "extends": ["plugin:prettier/recommended"],
   "parserOptions": {
     "ecmaVersion": 7,

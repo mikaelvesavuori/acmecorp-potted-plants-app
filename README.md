@@ -10,12 +10,10 @@ An example application meant to use a React component library generated partiall
 - Prettier
 - Babel
 
-
 ## Instructions
 
 - Install with `npm install`
 - Run dev server with `npm start`
-
 
 ## Structure
 
