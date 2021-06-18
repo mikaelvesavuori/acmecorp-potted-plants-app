@@ -1,4 +1,4 @@
-# ACME Corp. Potted Plants - Example app to use a component library with
+# ACME Corp. Potted Plants - Example app to use with your own component library
 
 An example application meant to use a React component library generated partially with Figmagic. Made for [The newline Guide to React Component Design Systems with Figmagic](https://www.newline.co/courses/newline-guide-to-react-component-design-systems-with-figmagic/).
 
