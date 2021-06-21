@@ -21,15 +21,22 @@ export const ProductsView = ({ itemCount, addItemToCart }) => {
   }) : null;
 
   return (
-    <main>
-      <Header>Products</Header>
+    <>
+      <main id="products">
+        <Header>Products</Header>
 
-      {products}
+        <div style={{
+          display: "flex",
+          justifyContent: "space-evenly",
+          flexWrap: "wrap"
+        }}>
+        {products}
+        </div>
 
-      <CartButton itemCount={itemCount} />
-
+        <CartButton itemCount={itemCount} />
+      </main>
       <Footer>The ACME Corp. Potted Plants store</Footer>
-    </main>
+    </>
   )
 }
 

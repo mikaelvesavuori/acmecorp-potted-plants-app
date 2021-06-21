@@ -1,31 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { Header, Footer, CheckoutItem, CheckoutForm } from '@mikaelvesavuori/acmecorp-potted-plants-components';
+import { Header, Description, Footer, CheckoutItem, CheckoutForm } from '@mikaelvesavuori/acmecorp-potted-plants-components';
 
 export const CheckoutView = ({ addItemToCart, removeItemFromCart, products }) => {
   const checkoutItems = products ? Object.entries(products).map(product => {
-    const [productName, productCount] = product;
+    const [productName, productCount, productPrice] = product;
     return <CheckoutItem
       name={productName}
       count={productCount}
+      price={productPrice}
       addItemToCart={addItemToCart}
       removeItemFromCart={removeItemFromCart}
       key={productName} />;
   }) : null;
 
   return (
-    <main>
-      <Header>Checkout</Header>
+    <>
+      <main id="checkout">
+        <Header>Checkout</Header>
 
-      <div><a href="/products">Go back to products</a></div>
+        <Description><a href="/products">Go back to products</a></Description>
 
-      <div>{checkoutItems}</div>
+        <div>{checkoutItems}</div>
 
-      <CheckoutForm />
-
+        <CheckoutForm />
+      </main>
       <Footer>The ACME Corp. Potted Plants store</Footer>
-    </main>
+    </>
   )
 };
 

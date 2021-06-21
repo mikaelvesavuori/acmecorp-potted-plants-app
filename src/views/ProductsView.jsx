@@ -15,18 +15,19 @@ export const ProductsView = ({ itemCount, addItemToCart }) => {
   }) : null;
 
   return (
-    <main>
-      <h1>Products</h1>
+    <>
+      <main id="products">
+        <h1>Products</h1>
 
-      {products}
+        {products}
 
-      <div>
-        <p>Items in cart: {itemCount}</p>
-        <a href="/checkout">Go to checkout</a>
-      </div>
-
+        <div>
+          <p>Items in cart: {itemCount}</p>
+          <a href="/checkout">Go to checkout</a>
+        </div>
+      </main>
       <footer>The ACME Corp. Potted Plants store</footer>
-    </main>
+    </>
   )
 };
 
