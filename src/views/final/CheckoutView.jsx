@@ -10,7 +10,7 @@ export const CheckoutView = ({ addItemToCart, removeItemFromCart, products }) =>
     return <CheckoutItem
       name={name}
       count={count}
-      price={price}
+      price={parseInt(price)}
       addItemToCart={addItemToCart}
       removeItemFromCart={removeItemFromCart}
       key={productName} />;

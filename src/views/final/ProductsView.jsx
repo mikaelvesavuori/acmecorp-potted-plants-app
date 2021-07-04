@@ -13,7 +13,7 @@ export const ProductsView = ({ itemCount, addItemToCart }) => {
         imageUrl={imageUrl}
         heading={heading}
         description={description}
-        price={price}
+        price={parseInt(price)}
         id={id}
         addItemToCart={(e) => addItemToCart(e)}
         key={id} />
