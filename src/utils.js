@@ -38,13 +38,19 @@ const saveState = (currentState) => {
 }
 
 /**
-* @description Create a list of updated products.
+* @description Create a list of updated products using existing products and the new (added/removed) product.
 */
-const createListOfUpdatedProductsInCart = (products, id, add) => {
+const createListOfUpdatedProductsInCart = (products, newProduct, add) => {
+  const { id, price } = newProduct;
   const currentProducts = products;
+  const updatedCount = currentProducts[id] ? updateCount(currentProducts[id].count, add) : 1;
+
   return {
     ...currentProducts,
-    [id]: updateCount(currentProducts[id], add)
+    [id]: {
+      count: updatedCount,
+      price
+    }
   }
 }
 

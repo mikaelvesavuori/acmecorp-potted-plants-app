@@ -32,10 +32,10 @@ export class App extends React.Component {
    * @description Update cart state. Called only via helper functions like `addItemToCart()` and `removeItemFromCart()`.
    */
   updateCart(event, add) {
-    const id = event.target.id;
+    const [id, price] = event.target.id.split("#");
 
-    const updatedProductsInCart = createListOfUpdatedProductsInCart(this.state.products, id, add);
-    const updatedCount = Object.values(updatedProductsInCart).reduce((a, b) => a + b, 0);
+    const updatedProductsInCart = createListOfUpdatedProductsInCart(this.state.products, {id, price}, add);
+    const updatedCount = Object.values(updatedProductsInCart).map((item) => item.count).reduce((a, b) => a + b, 0);
 
     this.setState({
       itemsInCart: updatedCount,
@@ -52,14 +52,14 @@ export class App extends React.Component {
           <Route path="/products" exact render={() =>
             <ProductsView
               addItemToCart={(e) => this.addItemToCart(e)}
-              itemCount={ this.state.itemsInCart } />}
-            />
+              itemCount={this.state.itemsInCart} />}
+          />
           <Route path="/checkout" exact render={() =>
             <CheckoutView
               addItemToCart={(e) => this.addItemToCart(e)}
               removeItemFromCart={(e) => this.removeItemFromCart(e)}
-              products={ this.state.products } />}
-            />
+              products={this.state.products} />}
+          />
           <Route path="/demo" exact component={DemoView} />
           <Redirect to="/demo" />
         </Switch>

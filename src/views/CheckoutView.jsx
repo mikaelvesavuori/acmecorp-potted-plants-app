@@ -3,8 +3,9 @@ import PropTypes from 'prop-types';
 
 export const CheckoutView = ({ products }) => {
   const checkoutItems = products ? Object.entries(products).map(product => {
-    const [productName, productCount, productPrice] = product;
-    return <div key={productName}>{productName}, {productCount} x {productPrice} $</div>;
+    const [productName, productData] = product;
+    const { count, price } = productData;
+    return <div key={productName}>{productName}, {count} x {price} $</div>;
   }) : null;
 
   return (

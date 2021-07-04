@@ -10,7 +10,7 @@ export const ProductsView = ({ itemCount, addItemToCart }) => {
       <img src={imageUrl} width="320px" />
       <h2>{heading}</h2>
       <p>{description}</p>
-      <button id={id} onClick={addItemToCart}>{price} $</button>
+      <button id={`${id}#${price}`} onClick={addItemToCart}>{price} $</button>
     </div>
   }) : null;
 

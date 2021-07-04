@@ -5,11 +5,12 @@ import { Header, Description, Footer, CheckoutItem, CheckoutForm } from '@mikael
 
 export const CheckoutView = ({ addItemToCart, removeItemFromCart, products }) => {
   const checkoutItems = products ? Object.entries(products).map(product => {
-    const [productName, productCount, productPrice] = product;
+    const [productName, productData] = product;
+    const { name, count, price } = productData;
     return <CheckoutItem
-      name={productName}
-      count={productCount}
-      price={productPrice}
+      name={name}
+      count={count}
+      price={price}
       addItemToCart={addItemToCart}
       removeItemFromCart={removeItemFromCart}
       key={productName} />;
