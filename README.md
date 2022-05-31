@@ -1,5 +1,7 @@
 # ACME Corp. Potted Plants - Example app to use with your own component library
 
+**Note that Node 17 may not work with some of the deeper dependencies; if you get errors, please use Node 16 instead. Consider using [n](https://github.com/tj/n) or [nvm](https://github.com/nvm-sh/nvm) for this**.
+
 An example application meant to use a React component library generated partially with Figmagic. Made for [The newline Guide to React Component Design Systems with Figmagic](https://www.newline.co/courses/newline-guide-to-react-component-design-systems-with-figmagic/).
 
 ## Technology

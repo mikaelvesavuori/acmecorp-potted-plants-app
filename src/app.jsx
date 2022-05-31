@@ -6,9 +6,9 @@ import {
   Redirect
 } from 'react-router-dom';
 
-import { DemoView } from './views/final/DemoView';
-import { ProductsView } from './views/final/ProductsView';
-import { CheckoutView } from './views/final/CheckoutView';
+import { DemoView } from './views/DemoView';
+import { ProductsView } from './views/ProductsView';
+import { CheckoutView } from './views/CheckoutView';
 
 import { loadState, saveState, createListOfUpdatedProductsInCart } from './utils';
 
