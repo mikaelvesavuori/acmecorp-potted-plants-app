@@ -10,6 +10,8 @@ export const CheckoutView = ({ products }) => {
 
   return (
     <>
+      <a href="/final/checkout">Switch to final</a>
+
       <main id="checkout">
         <h1>Checkout</h1>
 

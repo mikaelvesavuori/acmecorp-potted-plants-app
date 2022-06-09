@@ -5,7 +5,7 @@ import { Header, Footer, ProductCard, CartButton } from '@mikaelvesavuori/acmeco
 
 import productData from '../../data.json';
 
-export const ProductsView = ({ itemCount, addItemToCart }) => {
+export const ProductsViewFinal = ({ itemCount, addItemToCart }) => {
   const products = productData ? productData.products.map(product => {
     const { imageUrl, heading, description, price, id} = product;
     return (
@@ -22,6 +22,8 @@ export const ProductsView = ({ itemCount, addItemToCart }) => {
 
   return (
     <>
+      <a href="/products">Switch to starter</a>
+
       <main id="products">
         <Header>Products</Header>
 
@@ -33,18 +35,20 @@ export const ProductsView = ({ itemCount, addItemToCart }) => {
         {products}
         </div>
 
-        <CartButton itemCount={itemCount} />
+        <a href="/final/checkout">
+          <CartButton itemCount={itemCount} />
+        </a>
       </main>
       <Footer>The ACME Corp. Potted Plants store</Footer>
     </>
   )
 }
 
-ProductsView.default = {
+ProductsViewFinal.default = {
   itemCount: 0
 };
 
-ProductsView.propTypes = {
+ProductsViewFinal.propTypes = {
   itemCount: PropTypes.number.isRequired,
 	addItemToCart: PropTypes.func.isRequired
 };

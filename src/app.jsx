@@ -10,6 +10,10 @@ import { DemoView } from './views/DemoView';
 import { ProductsView } from './views/ProductsView';
 import { CheckoutView } from './views/CheckoutView';
 
+import { DemoViewFinal } from './views/final/DemoView';
+import { ProductsViewFinal } from './views/final/ProductsView';
+import { CheckoutViewFinal } from './views/final/CheckoutView';
+
 import { loadState, saveState, createListOfUpdatedProductsInCart } from './utils';
 
 export class App extends React.Component {
@@ -54,13 +58,25 @@ export class App extends React.Component {
               addItemToCart={(e) => this.addItemToCart(e)}
               itemCount={this.state.itemsInCart} />}
           />
+          <Route path="/final/products" exact render={() =>
+            <ProductsViewFinal
+              addItemToCart={(e) => this.addItemToCart(e)}
+              itemCount={this.state.itemsInCart} />}
+          />
           <Route path="/checkout" exact render={() =>
             <CheckoutView
               addItemToCart={(e) => this.addItemToCart(e)}
               removeItemFromCart={(e) => this.removeItemFromCart(e)}
               products={this.state.products} />}
           />
+          <Route path="/final/checkout" exact render={() =>
+            <CheckoutViewFinal
+              addItemToCart={(e) => this.addItemToCart(e)}
+              removeItemFromCart={(e) => this.removeItemFromCart(e)}
+              products={this.state.products} />}
+          />
           <Route path="/demo" exact component={DemoView} />
+          <Route path="/final/demo" exact component={DemoViewFinal} />
           <Redirect to="/demo" />
         </Switch>
       </Router>

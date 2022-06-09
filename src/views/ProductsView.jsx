@@ -16,6 +16,8 @@ export const ProductsView = ({ itemCount, addItemToCart }) => {
 
   return (
     <>
+      <a href="/final/checkout">Switch to final</a>
+
       <main id="products">
         <h1>Products</h1>
 

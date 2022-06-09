@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import { Header, Description, Footer, CheckoutItem, CheckoutForm } from '@mikaelvesavuori/acmecorp-potted-plants-components';
 
-export const CheckoutView = ({ addItemToCart, removeItemFromCart, products }) => {
+export const CheckoutViewFinal = ({ addItemToCart, removeItemFromCart, products }) => {
   const checkoutItems = products ? Object.entries(products).map(product => {
     const [productName, productData] = product;
     const { name, count, price } = productData;
@@ -18,10 +18,12 @@ export const CheckoutView = ({ addItemToCart, removeItemFromCart, products }) =>
 
   return (
     <>
+      <a href="/checkout">Switch to starter</a>
+
       <main id="checkout">
         <Header>Checkout</Header>
 
-        <Description><a href="/products">Go back to products</a></Description>
+        <Description><a href="/final/products">Go back to products</a></Description>
 
         <div>{checkoutItems}</div>
 
@@ -32,7 +34,7 @@ export const CheckoutView = ({ addItemToCart, removeItemFromCart, products }) =>
   )
 };
 
-CheckoutView.propTypes = {
+CheckoutViewFinal.propTypes = {
 	addItemToCart: PropTypes.func.isRequired,
   removeItemFromCart: PropTypes.func.isRequired,
   products: PropTypes.object.isRequired
