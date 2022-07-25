@@ -3,16 +3,21 @@ import PropTypes from 'prop-types';
 
 import { Header, Description, Footer, CheckoutItem, CheckoutForm } from '@mikaelvesavuori/acmecorp-potted-plants-components';
 
+import productData from '../../data.json';
+
 export const CheckoutViewFinal = ({ addItemToCart, removeItemFromCart, products }) => {
   const checkoutItems = products ? Object.entries(products).map(product => {
-    const [productName, productData] = product;
-    const { name, count, price } = productData;
+    const [productName, productInfo] = product;
+    const { name, count, price } = productInfo;
+    const { imageUrl } = productData.products.filter((product) => product.id === productName)[0];
+
     return <CheckoutItem
       name={name}
       count={count}
-      price={parseInt(price)}
-      addItemToCart={addItemToCart}
-      removeItemFromCart={removeItemFromCart}
+      price={price ? parseInt(price) : ''}
+      imageUrl={imageUrl}
+      addItemToCart={() => addItemToCart({ name, price, id: productName })}
+      removeItemFromCart={() => removeItemFromCart({ name, price, id: productName })}
       key={productName} />;
   }) : null;
 

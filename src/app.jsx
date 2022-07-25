@@ -23,22 +23,20 @@ export class App extends React.Component {
   }
 
   /**
-   * @description Add single unit of ID'ed item to cart.
+   * @description Add single item to cart.
    */
-  addItemToCart = (id) => this.updateCart(id, true);
+  addItemToCart = (input) => this.updateCart(input, true);
 
   /**
-  * @description Remove single unit of ID'ed item from cart.
+  * @description Remove single item from cart.
   */
-  removeItemFromCart = (id) => this.updateCart(id, false);
+  removeItemFromCart = (input) => this.updateCart(input, false);
 
   /**
    * @description Update cart state. Called only via helper functions like `addItemToCart()` and `removeItemFromCart()`.
    */
-  updateCart(event, add) {
-    const [id, price] = event.target.id.split("#");
-
-    const updatedProductsInCart = createListOfUpdatedProductsInCart(this.state.products, {id, price}, add);
+  updateCart(input, add) {
+    const updatedProductsInCart = createListOfUpdatedProductsInCart(this.state.products, input, add);
     const updatedCount = Object.values(updatedProductsInCart).map((item) => item.count).reduce((a, b) => a + b, 0);
 
     this.setState({

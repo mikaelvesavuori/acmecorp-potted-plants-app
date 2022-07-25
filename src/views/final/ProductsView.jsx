@@ -7,15 +7,15 @@ import productData from '../../data.json';
 
 export const ProductsViewFinal = ({ itemCount, addItemToCart }) => {
   const products = productData ? productData.products.map(product => {
-    const { imageUrl, heading, description, price, id} = product;
+    const { imageUrl, heading, description, price, id } = product;
     return (
       <ProductCard
         imageUrl={imageUrl}
         heading={heading}
         description={description}
-        price={parseInt(price)}
+        price={price ? parseInt(price): ''}
         id={id}
-        addItemToCart={(e) => addItemToCart(e)}
+        addItemToCart={() => addItemToCart({ name: heading, price, id })}
         key={id} />
     )
   }) : null;
